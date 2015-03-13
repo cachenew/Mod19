@@ -14,9 +14,33 @@
 
 @implementation ViewController
 
+-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+//    sleep(5);
+//    [self performSelector:@selector(doRed:) withObject:nil afterDelay:5];
+//    self.view.backgroundColor = [UIColor redColor];
+    
+    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(doRed:) userInfo:nil repeats:NO];
+}
+
+-(void) doRed:(id)object
+{
+    self.view.backgroundColor = [UIColor redColor];
+}
+
+-(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    self.view.backgroundColor = [UIColor whiteColor];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+-(void)dosomething: (int)a
+{
+    
 }
 
 - (void)didReceiveMemoryWarning {
